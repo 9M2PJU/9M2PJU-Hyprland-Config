@@ -1,42 +1,31 @@
 #!/usr/bin/env bash
-# Hyprland Screenshot Helper
-# Usage: screenshot.sh [full|window|area]
+# Hyprland Screenshot Helper with Visual Window/Region Picker
+# Usage: screenshot.sh [full|window|active_window|area]
 
 set -euo pipefail
 
 MODE="${1:-full}"
 SAVE_DIR="$HOME/Pictures/Screenshots"
 mkdir -p "$SAVE_DIR"
-FILENAME="$SAVE_DIR/screenshot_$(date +'%Y%m%d_%H%M%S').png"
 
 case "$MODE" in
     full)
-        grim "$FILENAME"
-        wl-copy < "$FILENAME"
-        notify-send -t 3000 "Screenshot Captured" "Full screen saved and copied to clipboard"
+        hyprshot -m output -o "$SAVE_DIR" -t 3000
         ;;
     window)
-        # Query active window geometry from hyprctl
-        geom=$(hyprctl activewindow -j | jq -r 'if .at == null or .size == null then empty else "\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])" end')
-        if [[ -z "$geom" ]]; then
-            notify-send -u low "Screenshot" "No active window found"
-            exit 1
-        fi
-        grim -g "$geom" "$FILENAME"
-        wl-copy < "$FILENAME"
-        notify-send -t 3000 "Screenshot Captured" "Active window saved and copied to clipboard"
+        # Interactive window picker: dims screen and highlights windows on hover
+        hyprshot -m window -o "$SAVE_DIR" -t 3000
+        ;;
+    active_window)
+        # Direct capture of active focused window
+        hyprshot -m window -m active -o "$SAVE_DIR" -t 3000
         ;;
     area)
-        # Use slurp to select area
-        geom=$(slurp)
-        if [[ -n "$geom" ]]; then
-            grim -g "$geom" "$FILENAME"
-            wl-copy < "$FILENAME"
-            notify-send -t 3000 "Screenshot Captured" "Selected area saved and copied to clipboard"
-        fi
+        # Interactive region crop
+        hyprshot -m region -o "$SAVE_DIR" -t 3000
         ;;
     *)
-        echo "Usage: $0 {full|window|area}"
+        echo "Usage: $0 {full|window|active_window|area}"
         exit 1
         ;;
 esac
