@@ -26,6 +26,7 @@
         "battery",
         "clock",
         "tray",
+        "custom/clipboard",
         "custom/notification",
         "custom/power"
     ],
@@ -192,6 +193,15 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+
+    // Clipboard History (cliphist)
+    "custom/clipboard": {
+        "format": "󰅍",
+        "tooltip": true,
+        "tooltip-format": "Clipboard History\nLeft-click: Open clipboard menu\nRight-click: Clear history",
+        "on-click": "cliphist list | wofi --dmenu --prompt 'Clipboard History' | cliphist decode | wl-copy",
+        "on-click-right": "cliphist wipe && notify-send -t 2000 'Clipboard' 'History cleared'"
     },
 
     // SwayNC Notification Center
