@@ -41,10 +41,29 @@ Optimized, lightweight, and modern **Hyprland** (Wayland) dotfiles tuned for **L
 - **Lock on sleep**: Automatically locks session before suspend or lid close.
 - **Caffeine Mode**: Toggleable on Waybar via `idle_inhibitor`.
 
-### 4. Input & Navigation
-- **Mouse Wheel**: `scroll_factor = 2.0` (faster scroll speed matching KDE Plasma).
+### 4. Notification Center & Control Panel (`swaync`)
+- **Modern Slide-Out Panel**: Full notification history, media playback controls, and Do Not Disturb (DND).
+- **Auto-Dismiss Timeout**: Normal notifications auto-dismiss in **3 seconds** (and remain saved in history).
+- **Waybar Bell (`󰂚`)**: Shows unread notification badge; left-click opens Control Center, right-click toggles DND.
+
+### 5. Clipboard History (`cliphist`)
+- Automatically caches copied text, code snippets, and image data.
+- **Waybar Button (`󰅍`)**: Click to open searchable clipboard menu; right-click clears history.
+- **Shortcuts**: `SUPER + SHIFT + V` or `SUPER + H`.
+
+### 6. Screenshots & Snipping Tool
+- **Auto-Save**: Saves directly to `~/Pictures/Screenshots/` with ISO timestamps.
+- **Clipboard & Preview**: Instantly copies image to clipboard and displays notification thumbnail.
+- **Shortcuts**:
+  - `SUPER + SHIFT + S`: Interactive area snip (drag selection box).
+  - `Print`: Full screen capture.
+  - `SUPER + SHIFT + W`: Active focused window capture.
+
+### 7. Input, Navigation & Window Cycling
+- **Instant Window Switching**: Zero-delay focus cycling with `ALT + TAB` / `SUPER + TAB` across all monitors and workspaces.
+- **Mouse Wheel**: `scroll_factor = 2.0` (matching KDE Plasma scroll speed).
 - **Touchpad**: `scroll_factor = 1.0` (standard natural scrolling with tap-to-click).
-- **NumLock on Login**: Enabled across both SDDM and Hyprland desktop sessions.
+- **NumLock on Login**: Automatically enabled on both SDDM login screen and Hyprland session.
 
 ---
 
@@ -56,13 +75,18 @@ Optimized, lightweight, and modern **Hyprland** (Wayland) dotfiles tuned for **L
 | `SUPER` + `E` | Open File Manager (`dolphin`) |
 | `SUPER` + `R` or `SUPER` + `SPACE` | App Launcher (`wofi`) |
 | `SUPER` + `C` | Close Active Window |
-| `SUPER` + `V` | Toggle Floating Window |
+| `SUPER` + `V` | **Toggle Floating Window** (Full Tiled vs Small Floating) |
+| `SUPER` + `SHIFT` + `V` *(or `SUPER` + `H`)* | **Clipboard History** (`cliphist` popup) |
+| `SUPER` + `N` | **Notification Center** (`swaync` slide-out panel) |
+| `ALT` + `TAB` *(or `SUPER` + `TAB`)* | **Instant Window Switch** (Next Window) |
+| `ALT` + `SHIFT` + `TAB` | **Instant Window Switch** (Previous Window) |
+| `SUPER` + `SHIFT` + `S` | **Area Screenshot** (Save to Screenshots & Clipboard) |
+| `Print` | **Full Screen Screenshot** |
+| `SUPER` + `SHIFT` + `W` | **Active Window Screenshot** |
 | `SUPER` + `F` | **Maximize** (Monocle — keeps top bar visible) |
 | `SUPER` + `SHIFT` + `F` | **True Fullscreen** (covers whole display) |
 | `SUPER` + `L` | Lock Screen (`hyprlock`) |
 | `SUPER` + `M` | Exit Hyprland Session |
-| `Print` | Copy Full Screenshot to Clipboard |
-| `SUPER` + `SHIFT` + `S` | Area Screenshot (`grim` + `slurp`) |
 | `SUPER` + `[0-9]` | Switch to Workspace 1–10 |
 | `SUPER` + `SHIFT` + `[0-9]` | Move Window to Workspace 1–10 |
 | `SUPER` + Arrow Keys | Move Focus (Left/Right/Up/Down) |
@@ -82,13 +106,20 @@ Optimized, lightweight, and modern **Hyprland** (Wayland) dotfiles tuned for **L
 │   ├── hyprland.lua          # Main Hyprland Lua configuration
 │   ├── hyprland.conf         # Fallback Hyprland config
 │   ├── hypridle.conf         # Idle, DPMS, and sleep timeout daemon
-│   └── hyprlock.conf         # Blurred desktop lockscreen
+│   ├── hyprlock.conf         # Blurred desktop lockscreen
+│   └── scripts/
+│       ├── screenshot.sh     # Area, Fullscreen, and Window screenshot helper
+│       ├── window-switch-next.sh # Instant Next-Window focus switcher
+│       └── window-switch-prev.sh # Instant Prev-Window focus switcher
 ├── waybar/
 │   ├── config.jsonc          # Waybar module layout & definitions
 │   ├── style.css             # GTK CSS stylesheet
 │   └── scripts/
 │       ├── brightness-ext.sh # DDC/CI external monitor brightness controller
 │       └── tailscale.sh      # Tailscale VPN status module
+├── swaync/
+│   ├── config.json           # SwayNC notification center settings & 3s timeout
+│   └── style.css             # SwayNC notification & control center styling
 ├── wlogout/
 │   └── layout                # Power menu actions (Lock, Suspend, Reboot, Shutdown)
 └── sddm/
