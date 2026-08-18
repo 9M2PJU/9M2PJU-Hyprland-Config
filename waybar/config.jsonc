@@ -1,0 +1,203 @@
+// -*- mode: jsonc -*-
+{
+    "layer": "top",
+    "position": "top",
+    "height": 30,
+    "spacing": 4,
+
+    "modules-left": [
+        "hyprland/workspaces",
+        "hyprland/submap"
+    ],
+    "modules-center": [
+        "hyprland/window"
+    ],
+    "modules-right": [
+        "idle_inhibitor",
+        "pulseaudio",
+        "network",
+        "power-profiles-daemon",
+        "cpu",
+        "memory",
+        "disk",
+        "temperature",
+        "backlight",
+        "custom/backlight_ext",
+        "battery",
+        "clock",
+        "tray",
+        "custom/power"
+    ],
+
+    "hyprland/workspaces": {
+        "disable-scroll": false,
+        "all-outputs": true,
+        "format": "{name} {windows}",
+        "format-window-separator": " ",
+        "window-rewrite-default": "",
+        "window-rewrite": {
+            "class<kitty>": "",
+            "class<Alacritty>": "",
+            "class<foot>": "",
+            "class<google-chrome>": "",
+            "class<chromium>": "",
+            "class<Brave-browser>": "",
+            "class<firefox>": "",
+            "class<org.kde.dolphin>": "",
+            "class<dolphin>": "",
+            "class<code-oss>": "󰨞",
+            "class<Code>": "󰨞",
+            "class<vscodium>": "󰨞",
+            "class<Spotify>": "",
+            "class<discord>": "",
+            "class<vesktop>": "",
+            "class<org.telegram.desktop>": "",
+            "class<pavucontrol>": "󰕾",
+            "class<obs>": ""
+        },
+        "on-click": "activate"
+    },
+
+    "hyprland/window": {
+        "max-length": 50,
+        "separate-outputs": true
+    },
+
+    "idle_inhibitor": {
+        "format": "{icon}",
+        "format-icons": {
+            "activated": "",
+            "deactivated": ""
+        }
+    },
+
+    "tray": {
+        "spacing": 10
+    },
+
+    "clock": {
+        "format": "{:%d/%m/%Y %I:%M %p}",
+        "tooltip-format": "<big>{:%Y %B}</big>\n<tt><small>{calendar}</small></tt>",
+        "format-alt": "{:%A, %d %B %Y - %I:%M %p}"
+    },
+
+    "cpu": {
+        "format": "{usage}% ",
+        "tooltip": true,
+        "on-click": "kitty -e btop"
+    },
+
+    // Enhanced Memory Module with zram Swap info & btop shortcut
+    "memory": {
+        "interval": 5,
+        "format": "{percentage}% ",
+        "states": {
+            "warning": 75,
+            "critical": 90
+        },
+        "tooltip": true,
+        "tooltip-format": "RAM: {used:0.1f}GiB / {total:0.1f}GiB ({percentage}%)\nAvail: {avail:0.1f}GiB\nSwap (zram): {swapUsed:0.1f}GiB / {swapTotal:0.1f}GiB ({swapPercentage}%)\nClick: Open btop",
+        "on-click": "kitty -e btop"
+    },
+
+    // Btrfs Root Filesystem Space Monitor
+    "disk": {
+        "interval": 30,
+        "format": "{percentage_used}% 󰋊",
+        "path": "/",
+        "states": {
+            "warning": 80,
+            "critical": 90
+        },
+        "tooltip": true,
+        "tooltip-format": "Root (/): {used} used / {total} total ({percentage_used}%)\nFree: {free} ({percentage_free}%)\nClick: Open Dolphin",
+        "on-click": "dolphin /"
+    },
+
+    "temperature": {
+        "critical-threshold": 80,
+        "format": "{temperatureC}°C {icon}",
+        "format-icons": ["", "", ""]
+    },
+
+    // Laptop built-in backlight (eDP-1)
+    "backlight": {
+        "format": "{percent}% {icon}",
+        "format-icons": ["", "", "", "", "", "", "", "", ""],
+        "tooltip": true,
+        "tooltip-format": "Laptop Screen (eDP-1): {percent}%"
+    },
+
+    // External HDMI monitor backlight (HDMI-A-2 via DDC/CI)
+    "custom/backlight_ext": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/brightness-ext.sh get",
+        "on-scroll-up": "$HOME/.config/waybar/scripts/brightness-ext.sh up",
+        "on-scroll-down": "$HOME/.config/waybar/scripts/brightness-ext.sh down",
+        "signal": 8,
+        "interval": 30,
+        "tooltip": true
+    },
+
+    "battery": {
+        "states": {
+            "warning": 30,
+            "critical": 15
+        },
+        "format": "{capacity}% {icon}",
+        "format-full": "{capacity}% {icon}",
+        "format-charging": "{capacity}% ",
+        "format-plugged": "{capacity}% ",
+        "format-alt": "{time} {icon}",
+        "format-icons": ["", "", "", "", ""]
+    },
+
+    "power-profiles-daemon": {
+        "format": "{icon}",
+        "tooltip-format": "Power profile: {profile}\nDriver: {driver}",
+        "tooltip": true,
+        "format-icons": {
+            "default": "",
+            "performance": "",
+            "balanced": "",
+            "power-saver": ""
+        }
+    },
+
+    "network": {
+        "format-wifi": "{essid} ({signalStrength}%) ",
+        "format-ethernet": "{ipaddr}/{cidr} ",
+        "tooltip-format": "{ifname} via {gwaddr} ",
+        "format-linked": "{ifname} (No IP) ",
+        "format-disconnected": "Disconnected ⚠",
+        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+    },
+
+    "pulseaudio": {
+        "format": "{volume}% {icon} {format_source}",
+        "format-bluetooth": "{volume}% {icon} {format_source}",
+        "format-bluetooth-muted": " {icon} {format_source}",
+        "format-muted": " {format_source}",
+        "format-source": "{volume}% ",
+        "format-source-muted": "",
+        "format-icons": {
+            "headphone": "",
+            "hands-free": "",
+            "headset": "",
+            "phone": "",
+            "portable": "",
+            "car": "",
+            "default": ["", "", ""]
+        },
+        "on-click": "pavucontrol"
+    },
+
+    // Power / Session Menu
+    "custom/power": {
+        "format": "⏻",
+        "tooltip": true,
+        "tooltip-format": "Power / Session Menu\nClick to Lock, Logout, Suspend, Reboot, Shutdown",
+        "on-click": "wlogout -b 6"
+    }
+}
