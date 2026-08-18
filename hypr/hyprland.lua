@@ -183,8 +183,8 @@ hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/script
 
 -- Screenshots (Grim + Slurp)
 hl.bind("Print", hl.dsp.exec_cmd([[grim - | wl-copy && notify-send "Screenshot" "Full screen copied to clipboard"]]))
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd([[grim -g "$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" - | wl-copy && notify-send "Screenshot" "Active window copied to clipboard"]]))
 hl.bind("ALT + Print", hl.dsp.exec_cmd([[grim -g "$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" - | wl-copy && notify-send "Screenshot" "Active window copied to clipboard"]]))
-hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd([[grim -g "$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" - | wl-copy && notify-send "Screenshot" "Active window copied to clipboard"]]))
 hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | wl-copy && notify-send "Screenshot" "Area copied to clipboard"]]))
 
 -- Move focus with mainMod + arrow keys
