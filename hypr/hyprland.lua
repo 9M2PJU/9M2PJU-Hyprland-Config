@@ -182,8 +182,10 @@ hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/window
 hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/window-switch-prev.sh"))
 
 -- Screenshots (Grim + Slurp)
-hl.bind("Print", hl.dsp.exec_cmd([[grim - | wl-copy && notify-send "Screenshot copied to clipboard"]]))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | wl-copy && notify-send "Area screenshot copied to clipboard"]]))
+hl.bind("Print", hl.dsp.exec_cmd([[grim - | wl-copy && notify-send "Screenshot" "Full screen copied to clipboard"]]))
+hl.bind("ALT + Print", hl.dsp.exec_cmd([[grim -g "$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" - | wl-copy && notify-send "Screenshot" "Active window copied to clipboard"]]))
+hl.bind(mainMod .. " + Print", hl.dsp.exec_cmd([[grim -g "$(hyprctl activewindow -j | jq -r '"\(.at[0]),\(.at[1]) \(.size[0])x\(.size[1])"')" - | wl-copy && notify-send "Screenshot" "Active window copied to clipboard"]]))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd([[grim -g "$(slurp)" - | wl-copy && notify-send "Screenshot" "Area copied to clipboard"]]))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
