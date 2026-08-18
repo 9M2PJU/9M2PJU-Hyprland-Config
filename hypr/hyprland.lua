@@ -186,10 +186,10 @@ hl.bind("ALT + SHIFT + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/window
 hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/window-switch-next.sh"))
 hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/window-switch-prev.sh"))
 
--- Screenshots (Hyprshot)
-hl.bind("Print", hl.dsp.exec_cmd("hyprshot -m output -o ~/Pictures/Screenshots -t 3000"))
-hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("hyprshot -m window -o ~/Pictures/Screenshots -t 3000"))
-hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("hyprshot -m region -o ~/Pictures/Screenshots -t 3000"))
+-- Screenshots (Saves to ~/Pictures/Screenshots & copies to clipboard)
+hl.bind("Print", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/screenshot.sh full"))
+hl.bind(mainMod .. " + SHIFT + S", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/screenshot.sh area"))
+hl.bind(mainMod .. " + SHIFT + W", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/screenshot.sh window"))
 
 -- Move focus with mainMod + arrow keys
 hl.bind(mainMod .. " + left",  hl.dsp.focus({ direction = "left" }))
