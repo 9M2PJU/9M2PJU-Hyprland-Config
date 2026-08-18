@@ -245,3 +245,17 @@ label:focus {
 #custom-power:hover {
     background-color: #c0392b;
 }
+
+#custom-discord {
+    background-color: #5865F2;
+    color: #ffffff;
+    padding: 0 10px;
+    margin-left: 2px;
+    font-size: 15px;
+    border-radius: 6px;
+}
+
+#custom-discord:hover {
+    background-color: #4752c4;
+}
+
