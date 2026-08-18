@@ -175,9 +175,11 @@ hl.bind(mainMod .. " + P", hl.dsp.window.pseudo())
 hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
--- Window Switching (Instant Alt+Tab across all monitors, no Enter needed)
+-- Window Switching (Instant Alt+Tab & Super+Tab across all monitors & workspaces)
 hl.bind("ALT + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/window-switch-next.sh"))
 hl.bind("ALT + SHIFT + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/window-switch-prev.sh"))
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/window-switch-next.sh"))
+hl.bind(mainMod .. " + SHIFT + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/window-switch-prev.sh"))
 
 -- Screenshots (Grim + Slurp)
 hl.bind("Print", hl.dsp.exec_cmd([[grim - | wl-copy && notify-send "Screenshot copied to clipboard"]]))
