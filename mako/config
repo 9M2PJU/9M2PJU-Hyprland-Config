@@ -19,20 +19,20 @@ text-color=#cdd6f4ff
 border-color=#585b70ff
 progress-color=over #89b4faff
 
-# Timeouts in milliseconds (5000ms = 5s)
-default-timeout=5000
+# Timeouts in milliseconds (3000ms = 3s)
+default-timeout=3000
 ignore-timeout=0
 max-visible=5
 
 [urgency=low]
 border-color=#313244ff
-default-timeout=3000
+default-timeout=2000
 
 [urgency=normal]
 border-color=#89b4faff
-default-timeout=5000
+default-timeout=3000
 
 [urgency=high]
 border-color=#f38ba8ff
 text-color=#f38ba8ff
-default-timeout=8000
+default-timeout=5000
