@@ -7,7 +7,6 @@
 
     "modules-left": [
         "hyprland/workspaces",
-        "custom/discord",
         "hyprland/submap"
     ],
     "modules-center": [
@@ -57,14 +56,6 @@
             "class<obs>": ""
         },
         "on-click": "activate"
-    },
-
-    "custom/discord": {
-        "format": "󰙯",
-        "tooltip": true,
-        "tooltip-format": "Discord\n• Left Click: Show / Hide\n• Right Click: Quit",
-        "on-click": "~/.config/waybar/scripts/toggle-app.sh discord discord",
-        "on-click-right": "pkill discord || true"
     },
 
     "hyprland/window": {
