@@ -176,9 +176,8 @@ hl.bind(mainMod .. " + J", hl.dsp.layout("togglesplit"))
 hl.bind(mainMod .. " + L", hl.dsp.exec_cmd("hyprlock"))
 
 -- Window Switching (Alt+Tab & Super+Tab)
-hl.bind("ALT + TAB", hl.dsp.window.cycle_next())
-hl.bind("ALT + SHIFT + TAB", hl.dsp.window.cycle_next({ prev = true }))
-hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("wofi --show window"))
+hl.bind("ALT + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/window-switcher.sh"))
+hl.bind(mainMod .. " + TAB", hl.dsp.exec_cmd("bash ~/.config/hypr/scripts/window-switcher.sh"))
 
 -- Screenshots (Grim + Slurp)
 hl.bind("Print", hl.dsp.exec_cmd([[grim - | wl-copy && notify-send "Screenshot copied to clipboard"]]))
