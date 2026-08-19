@@ -18,6 +18,6 @@ if [[ -n "$selected" ]]; then
     # Find matching address
     addr=$(echo "$windows" | grep -F "$selected" | head -n 1 | awk -F'\t' '{print $1}')
     if [[ -n "$addr" ]]; then
-        hyprctl dispatch focuswindow "address:$addr"
+        hyprctl eval "hl.dispatch(hl.dsp.focus({ window = 'address:$addr' }))"
     fi
 fi

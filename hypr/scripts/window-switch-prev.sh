@@ -15,9 +15,9 @@ fi
 for i in "${!clients[@]}"; do
     if [[ "${clients[$i]}" == "$active" ]]; then
         prev_index=$(( (i - 1 + num) % num ))
-        hyprctl dispatch focuswindow "address:${clients[$prev_index]}"
+        hyprctl eval "hl.dispatch(hl.dsp.focus({ window = 'address:${clients[$prev_index]}' }))"
         exit 0
     fi
 done
 
-hyprctl dispatch focuswindow "address:${clients[-1]}"
+hyprctl eval "hl.dispatch(hl.dsp.focus({ window = 'address:${clients[-1]}' }))"

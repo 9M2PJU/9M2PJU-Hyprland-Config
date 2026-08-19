@@ -25,11 +25,11 @@ client_ws=$(echo "$client_info" | jq -r '.workspace' | head -n 1)
 
 if [[ "$addr" == "$current_active" ]]; then
     # Currently focused -> hide to special workspace (minimize)
-    hyprctl dispatch movetoworkspacesilent "special:$WS_NAME,address:$addr"
+    hyprctl eval "hl.dispatch(hl.dsp.window.move({ workspace = 'special:$WS_NAME', silent = true }))"
 elif [[ "$client_ws" == "special:$WS_NAME" ]]; then
     # In special workspace -> show it
-    hyprctl dispatch togglespecialworkspace "$WS_NAME"
+    hyprctl eval "hl.dispatch(hl.dsp.workspace.toggle_special({ name = '$WS_NAME' }))"
 else
     # On another workspace -> focus it or bring to current workspace
-    hyprctl dispatch focuswindow "address:$addr"
+    hyprctl eval "hl.dispatch(hl.dsp.focus({ window = 'address:$addr' }))"
 fi
