@@ -1,0 +1,127 @@
+configuration {
+    modi: "drun,run,filebrowser";
+    show-icons: true;
+    icon-theme: "Papirus-Dark";
+    display-drun: "  Apps";
+    display-run: "  Run";
+    display-filebrowser: "  Files";
+    drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
+    drun-match-fields: "name,generic,exec,categories";
+    font: "CaskaydiaCove Nerd Font 12";
+    terminal: "kitty";
+}
+
+@theme "/dev/null"
+
+* {
+    bg-col:  #1a1b26f2;
+    bg-col-light: #24283b;
+    border-col: #7aa2f7;
+    selected-col: #292e42;
+    blue: #7aa2f7;
+    fg-col: #c0caf5;
+    fg-col2: #7aa2f7;
+    grey: #565f89;
+
+    width: 680;
+    font: "CaskaydiaCove Nerd Font 12";
+}
+
+element-text, element-icon, mode-switcher {
+    background-color: inherit;
+    text-color:       inherit;
+}
+
+window {
+    height: 500px;
+    border: 2px;
+    border-color: @border-col;
+    background-color: @bg-col;
+    border-radius: 14px;
+}
+
+mainbox {
+    background-color: transparent;
+    padding: 16px;
+}
+
+inputbar {
+    children: [prompt,entry];
+    background-color: @bg-col-light;
+    border-radius: 10px;
+    border: 1px;
+    border-color: @blue;
+    padding: 8px 12px;
+    margin: 0px 0px 10px 0px;
+}
+
+prompt {
+    background-color: @blue;
+    padding: 6px 12px;
+    text-color: #1a1b26;
+    border-radius: 6px;
+    margin: 0px 10px 0px 0px;
+    font-weight: bold;
+}
+
+entry {
+    padding: 6px;
+    margin: 0px 0px 0px 5px;
+    text-color: @fg-col;
+    background-color: transparent;
+    placeholder: "Search applications, categories...";
+    placeholder-color: @grey;
+}
+
+listview {
+    border: 0px 0px 0px;
+    padding: 6px 0px 0px;
+    margin: 10px 0px 0px 0px;
+    columns: 2;
+    lines: 7;
+    background-color: transparent;
+}
+
+element {
+    padding: 8px 12px;
+    margin: 3px;
+    background-color: transparent;
+    text-color: @fg-col;
+    border-radius: 8px;
+    border: 1px;
+    border-color: transparent;
+}
+
+element-icon {
+    size: 28px;
+    margin: 0px 10px 0px 0px;
+}
+
+element selected {
+    background-color: @selected-col;
+    text-color: #ffffff;
+    border-color: @blue;
+}
+
+mode-switcher {
+    spacing: 10px;
+    margin: 12px 0px 0px 0px;
+}
+
+button {
+    padding: 8px 14px;
+    background-color: @bg-col-light;
+    text-color: @grey;
+    vertical-align: 0.5; 
+    horizontal-align: 0.5;
+    border-radius: 8px;
+    border: 1px;
+    border-color: transparent;
+}
+
+button selected {
+    background-color: @blue;
+    text-color: #1a1b26;
+    font-weight: bold;
+    border-color: @blue;
+}
