@@ -34,11 +34,11 @@
 
     "hyprland/workspaces": {
         "disable-scroll": false,
-        "all-outputs": false,
+        "all-outputs": true,
         "format": "{name} {windows}",
         "format-window-separator": " ",
         "persistent-workspaces": {
-            "HDMI-A-2": [2, 3, 4, 5]
+            "*": [1, 2, 3, 4]
         },
         "window-rewrite-default": "",
         "window-rewrite": {
