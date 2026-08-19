@@ -231,7 +231,7 @@
         "format": "󰅍",
         "tooltip": true,
         "tooltip-format": "Clipboard History\nLeft-click: Open clipboard menu\nRight-click: Clear history",
-        "on-click": "cliphist list | wofi --dmenu --prompt 'Clipboard History' | cliphist decode | wl-copy",
+        "on-click": "bash ~/.config/hypr/scripts/clipboard.sh",
         "on-click-right": "cliphist wipe && notify-send -t 2000 'Clipboard' 'History cleared'"
     },
 
