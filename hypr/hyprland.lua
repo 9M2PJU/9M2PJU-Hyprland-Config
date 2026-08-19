@@ -52,7 +52,7 @@ local browser     = "google-chrome-stable"
 -------------------
 hl.on("hyprland.start", function ()
     hl.exec_cmd("~/.config/waybar/launch-waybar.sh")
-    hl.exec_cmd("swaync")
+    hl.exec_cmd("~/.config/hypr/scripts/launch-swaync.sh")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
     hl.exec_cmd("nm-applet --indicator")

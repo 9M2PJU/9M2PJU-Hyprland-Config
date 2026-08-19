@@ -27,6 +27,10 @@ update_and_run_waybar() {
     killall -9 waybar 2>/dev/null || true
     sleep 0.3
     hyprctl dispatch "hl.dsp.exec_cmd('waybar')" >/dev/null 2>&1 || (nohup waybar >/dev/null 2>&1 & disown)
+    
+    # Direct SwayNC notification popups and control center to primary active monitor
+    swaync-client --change-noti-monitor "$target" >/dev/null 2>&1 || true
+    swaync-client --change-cc-monitor "$target" >/dev/null 2>&1 || true
 }
 
 # Initial startup
