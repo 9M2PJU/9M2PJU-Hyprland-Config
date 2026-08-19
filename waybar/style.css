@@ -22,7 +22,6 @@ window#waybar {
 
 /* Base Pill Styling for All Modules */
 #workspaces,
-#taskbar,
 #window,
 #clock,
 #cpu,
@@ -52,7 +51,6 @@ window#waybar {
 
 /* Hover effect on pills */
 #workspaces:hover,
-#taskbar:hover,
 #window:hover,
 #clock:hover,
 #cpu:hover,
@@ -108,40 +106,6 @@ window#waybar {
     background-color: #f7768e;
     color: #1a1b26;
     font-weight: bold;
-}
-
-#taskbar {
-    padding: 2px 4px;
-}
-
-#taskbar button {
-    padding: 2px 8px;
-    margin: 2px 2px;
-    border-radius: 8px;
-    background-color: transparent;
-    color: #a9b1d6;
-    transition: all 0.2s ease;
-}
-
-#taskbar button:hover {
-    background-color: rgba(122, 162, 247, 0.2);
-    color: #7aa2f7;
-}
-
-#taskbar button.active {
-    background-color: rgba(122, 162, 247, 0.35);
-    border-bottom: 2px solid #7aa2f7;
-    color: #7dcfff;
-    font-weight: bold;
-    box-shadow: 0 2px 6px rgba(122, 162, 247, 0.4);
-}
-
-#taskbar button.maximized {
-    color: #9ece6a;
-}
-
-#taskbar button.minimized {
-    opacity: 0.5;
 }
 
 #window {

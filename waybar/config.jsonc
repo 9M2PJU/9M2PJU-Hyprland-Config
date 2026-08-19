@@ -8,25 +8,24 @@
 
     "modules-left": [
         "hyprland/workspaces",
-        "wlr/taskbar",
-        "hyprland/submap",
-        "hyprland/window"
+        "hyprland/submap"
     ],
     "modules-center": [
-        "clock"
+        "hyprland/window"
     ],
     "modules-right": [
         "idle_inhibitor",
         "pulseaudio",
-        "backlight",
-        "custom/backlight_ext",
+        "network",
+        "power-profiles-daemon",
         "cpu",
         "memory",
         "disk",
         "temperature",
+        "backlight",
+        "custom/backlight_ext",
         "battery",
-        "network",
-        "power-profiles-daemon",
+        "clock",
         "tray",
         "custom/clipboard",
         "custom/notification",
@@ -65,32 +64,9 @@
         "on-click": "activate"
     },
 
-    "wlr/taskbar": {
-        "format": "{icon}",
-        "icon-size": 16,
-        "tooltip-format": "{title}",
-        "on-click": "activate",
-        "on-click-middle": "close",
-        "all-outputs": false
-    },
-
     "hyprland/window": {
-        "format": "{icon} {title}",
-        "icon": true,
-        "icon-size": 16,
         "max-length": 50,
-        "separate-outputs": true,
-        "rewrite": {
-            "^$": "ThinkPad T460",
-            "(.*) — Mozilla Firefox": " $1",
-            "(.*) - Google Chrome": " $1",
-            "(.*) - Chromium": " $1",
-            "(.*) - Brave": " $1",
-            "(.*) - Visual Studio Code": "󰨞 $1",
-            "(.*) - Code - OSS": "󰨞 $1",
-            "^kitty$": " kitty",
-            "^agy$": " agy"
-        }
+        "separate-outputs": true
     },
 
     "idle_inhibitor": {
