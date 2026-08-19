@@ -131,6 +131,7 @@ window#waybar {
 #mpris.stopped,
 #submap {
     background-color: transparent;
+    background: transparent;
     border: none;
     box-shadow: none;
     padding: 0;

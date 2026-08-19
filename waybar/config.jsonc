@@ -7,7 +7,8 @@
     "spacing": 2,
 
     "modules-left": [
-        "hyprland/workspaces"
+        "hyprland/workspaces",
+        "mpris"
     ],
     "modules-center": [
         "hyprland/window"
@@ -71,17 +72,19 @@
     "mpris": {
         "format": "{player_icon} {dynamic}",
         "format-paused": "{status_icon} <i>{dynamic}</i>",
+        "format-stopped": "",
         "player-icons": {
             "default": "",
             "mpv": "",
             "spotify": "",
             "chromium": "",
+            "google-chrome": "",
             "firefox": ""
         },
         "status-icons": {
             "paused": "󰏤",
             "playing": "󰐊",
-            "stopped": "󰓛"
+            "stopped": ""
         },
         "dynamic-order": ["title", "artist"],
         "dynamic-len": 32,
