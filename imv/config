@@ -1,0 +1,47 @@
+# =============================================================================
+# imv configuration - Tokyo Night Theme
+# =============================================================================
+
+[options]
+# Tokyo Night background (#1a1b26)
+background = 1a1b26
+
+# Overlay text showing filename and dimensions
+overlay = false
+overlay_font = CaskaydiaCove Nerd Font:12
+overlay_text_color = c0caf5
+overlay_background_color = 1a1b26
+overlay_background_alpha = c0
+
+# Scaling: shrink or auto
+scaling_mode = full
+
+[binds]
+# Navigation (Cycle images in directory)
+<Right> = next
+<Left> = prev
+l = next
+h = prev
+n = next
+p = prev
+
+# Zoom & Pan
+<Up> = zoom 1
+<Down> = zoom -1
+k = zoom 1
+j = zoom -1
+<equal> = zoom actual
+0 = zoom actual
+<minus> = zoom -1
+
+# Transformations
+r = rotate by 90
+<Shift+R> = rotate by -90
+f = fullscreen
+i = overlay
+<Return> = overlay
+s = scaling next
+
+# Exit
+q = quit
+<Escape> = quit
