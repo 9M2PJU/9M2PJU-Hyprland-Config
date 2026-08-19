@@ -199,12 +199,16 @@
     },
 
     "network": {
-        "format-wifi": "{essid} ({signalStrength}%) ",
-        "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} ",
-        "format-linked": "{ifname} (No IP) ",
-        "format-disconnected": "Disconnected ⚠",
-        "format-alt": "{ifname}: {ipaddr}/{cidr}"
+        "format-wifi": "{icon} {essid}",
+        "format-ethernet": "󰈀 {ipaddr}/{cidr}",
+        "tooltip-format-wifi": "SSID: {essid}\nInterface: {ifname}\nIP: {ipaddr}\nSignal: {signalStrength}% ({signaldBm} dBm)\nFrequency: {frequency} MHz\n\nClick: Select Wi-Fi Network\nRight-click: Network Settings",
+        "tooltip-format-ethernet": "Interface: {ifname}\nIP: {ipaddr}\nGateway: {gwaddr}",
+        "format-linked": "󰈂 {ifname} (No IP)",
+        "format-disconnected": "󰤮 Disconnected",
+        "format-icons": ["󰤯", "󰤟", "󰤢", "󰤥", "󰤨"],
+        "on-click": "bash ~/.config/hypr/scripts/wifi-menu.sh",
+        "on-click-right": "nm-connection-editor",
+        "on-click-middle": "kitty -e nmtui"
     },
 
     "pulseaudio": {
