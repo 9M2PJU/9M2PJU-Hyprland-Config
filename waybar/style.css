@@ -128,6 +128,15 @@ window#waybar {
     border-color: rgba(86, 95, 137, 0.2);
 }
 
+#mpris.stopped,
+#submap {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
+}
+
 /* =============================================================================
  * Center Module: Active Window Title
  * ============================================================================= */
