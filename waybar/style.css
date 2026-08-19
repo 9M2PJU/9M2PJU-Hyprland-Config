@@ -22,6 +22,7 @@ window#waybar {
 
 /* Base Pill Styling for All Modules */
 #workspaces,
+#mpris,
 #window,
 #clock,
 #cpu,
@@ -51,6 +52,7 @@ window#waybar {
 
 /* Hover effect on pills */
 #workspaces:hover,
+#mpris:hover,
 #window:hover,
 #clock:hover,
 #cpu:hover,
@@ -111,6 +113,22 @@ window#waybar {
 #window {
     color: #7dcfff;
     font-weight: 500;
+}
+
+#mpris {
+    color: #bb9af7;
+    border-color: rgba(187, 154, 247, 0.3);
+    font-weight: 500;
+}
+
+#mpris:hover {
+    color: #7dcfff;
+    border-color: rgba(125, 207, 255, 0.5);
+}
+
+#mpris.paused {
+    color: #565f89;
+    border-color: rgba(86, 95, 137, 0.2);
 }
 
 window#waybar.empty #window {
