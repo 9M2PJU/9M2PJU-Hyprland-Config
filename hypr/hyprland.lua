@@ -30,6 +30,15 @@ hl.monitor({
     scale    = 1,
 })
 
+--------------------
+---- WORKSPACES ----
+--------------------
+hl.workspace_rule({ workspace = "1", persistent = true })
+hl.workspace_rule({ workspace = "2", persistent = true })
+hl.workspace_rule({ workspace = "3", persistent = true })
+hl.workspace_rule({ workspace = "4", persistent = true })
+hl.workspace_rule({ workspace = "5", persistent = true })
+
 ---------------------
 ---- MY PROGRAMS ----
 ---------------------
@@ -41,7 +50,7 @@ local menu        = "wofi --show drun"
 ---- AUTOSTART ----
 -------------------
 hl.on("hyprland.start", function ()
-    hl.exec_cmd("waybar")
+    hl.exec_cmd("~/.config/waybar/launch-waybar.sh")
     hl.exec_cmd("swaync")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")

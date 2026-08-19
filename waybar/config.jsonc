@@ -1,30 +1,31 @@
 // -*- mode: jsonc -*-
 {
+    "output": ["HDMI-A-2"],
     "layer": "top",
     "position": "top",
-    "height": 30,
-    "spacing": 4,
+    "height": 34,
+    "spacing": 2,
 
     "modules-left": [
         "hyprland/workspaces",
-        "hyprland/submap"
+        "hyprland/submap",
+        "hyprland/window"
     ],
     "modules-center": [
-        "hyprland/window"
+        "clock"
     ],
     "modules-right": [
         "idle_inhibitor",
         "pulseaudio",
-        "network",
-        "power-profiles-daemon",
+        "backlight",
+        "custom/backlight_ext",
         "cpu",
         "memory",
         "disk",
         "temperature",
-        "backlight",
-        "custom/backlight_ext",
         "battery",
-        "clock",
+        "network",
+        "power-profiles-daemon",
         "tray",
         "custom/clipboard",
         "custom/notification",
@@ -36,6 +37,9 @@
         "all-outputs": true,
         "format": "{name} {windows}",
         "format-window-separator": " ",
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        },
         "window-rewrite-default": "",
         "window-rewrite": {
             "class<kitty>": "",
