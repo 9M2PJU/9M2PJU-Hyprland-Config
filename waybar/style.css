@@ -1,6 +1,7 @@
 /* =============================================================================
- * Waybar - Tokyo Night Modern Floating Island / Pill Theme
+ * Waybar - Catppuccin Mocha Modern Floating Island Theme
  * Designed for Lenovo ThinkPad T460 + Dual Monitors on CachyOS
+ * Palette: Catppuccin Mocha (Base, Mauve, Blue, Peach, Green, Lavender, Pink)
  * ============================================================================= */
 
 * {
@@ -12,15 +13,15 @@
     min-height: 0;
 }
 
-/* Transparent Waybar window with top/side margins for floating pill effect */
+/* Transparent Waybar window with floating pill effect */
 window#waybar {
     background-color: transparent;
-    color: #c0caf5;
+    color: #cdd6f4;
     transition-property: background-color;
     transition-duration: 0.3s;
 }
 
-/* Base Pill Styling for All Modules */
+/* Base Floating Pill Styling for All Modules */
 #workspaces,
 #mpris,
 #window,
@@ -40,13 +41,13 @@ window#waybar {
 #custom-clipboard,
 #custom-notification,
 #custom-power {
-    background-color: rgba(26, 27, 38, 0.88);
-    color: #c0caf5;
+    background-color: rgba(30, 30, 46, 0.88); /* Base (#1e1e2e) */
+    color: #cdd6f4; /* Text */
     padding: 2px 10px;
     margin: 5px 3px;
     border-radius: 12px;
-    border: 1px solid rgba(255, 255, 255, 0.08);
-    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    border: 1px solid rgba(205, 214, 244, 0.09);
+    box-shadow: 0 3px 8px rgba(17, 17, 27, 0.45); /* Crust shadow */
     transition: all 0.25s ease-in-out;
 }
 
@@ -70,13 +71,13 @@ window#waybar {
 #custom-clipboard:hover,
 #custom-notification:hover,
 #custom-power:hover {
-    background-color: rgba(36, 40, 59, 0.95);
-    border-color: rgba(122, 162, 247, 0.4);
-    box-shadow: 0 4px 10px rgba(122, 162, 247, 0.2);
+    background-color: rgba(49, 50, 68, 0.95); /* Surface0 (#313244) */
+    border-color: rgba(203, 166, 247, 0.4); /* Mauve accent */
+    box-shadow: 0 4px 12px rgba(203, 166, 247, 0.2);
 }
 
 /* =============================================================================
- * Left Modules: Workspaces & Active Window
+ * Left Modules: Workspaces, Submap & Music (MPRIS)
  * ============================================================================= */
 
 #workspaces {
@@ -88,47 +89,52 @@ window#waybar {
     margin: 2px 2px;
     border-radius: 8px;
     background-color: transparent;
-    color: #a9b1d6;
+    color: #a6adc8; /* Subtext0 */
     transition: all 0.2s ease;
 }
 
 #workspaces button:hover {
-    background-color: rgba(122, 162, 247, 0.2);
-    color: #7aa2f7;
+    background-color: rgba(203, 166, 247, 0.2);
+    color: #cba6f7; /* Mauve */
 }
 
 #workspaces button.active {
-    background-color: #7aa2f7;
-    color: #1a1b26;
+    background-color: #cba6f7; /* Mauve */
+    color: #11111b; /* Crust */
     font-weight: bold;
-    box-shadow: 0 2px 6px rgba(122, 162, 247, 0.4);
+    box-shadow: 0 2px 8px rgba(203, 166, 247, 0.45);
 }
 
 #workspaces button.urgent {
-    background-color: #f7768e;
-    color: #1a1b26;
+    background-color: #f38ba8; /* Red */
+    color: #11111b;
     font-weight: bold;
 }
 
-#window {
-    color: #7dcfff;
-    font-weight: 500;
-}
-
+/* MPRIS Music Player Pill */
 #mpris {
-    color: #bb9af7;
-    border-color: rgba(187, 154, 247, 0.3);
+    color: #cba6f7; /* Mauve */
+    border-color: rgba(203, 166, 247, 0.35);
     font-weight: 500;
 }
 
 #mpris:hover {
-    color: #7dcfff;
-    border-color: rgba(125, 207, 255, 0.5);
+    color: #89dceb; /* Sky */
+    border-color: rgba(137, 220, 235, 0.5);
 }
 
 #mpris.paused {
-    color: #565f89;
-    border-color: rgba(86, 95, 137, 0.2);
+    color: #6c7086; /* Overlay0 */
+    border-color: rgba(108, 112, 134, 0.25);
+}
+
+/* =============================================================================
+ * Center Module: Active Window Title
+ * ============================================================================= */
+
+#window {
+    color: #89dceb; /* Sky */
+    font-weight: 500;
 }
 
 window#waybar.empty #window {
@@ -138,73 +144,84 @@ window#waybar.empty #window {
 }
 
 /* =============================================================================
- * Center Module: Clock & Date
- * ============================================================================= */
-
-#clock {
-    color: #7aa2f7;
-    font-weight: bold;
-    letter-spacing: 0.5px;
-    padding: 2px 14px;
-}
-
-/* =============================================================================
  * Right Modules: Hardware, System, Audio, Battery & Controls
  * ============================================================================= */
 
-#cpu {
-    color: #bb9af7;
+#idle_inhibitor {
+    color: #74c7ec; /* Sapphire */
 }
 
-#memory {
-    color: #7dcfff;
-}
-
-#disk {
-    color: #9ece6a;
-}
-
-#temperature {
-    color: #e0af68;
-}
-
-#temperature.critical {
-    background-color: rgba(247, 118, 142, 0.25);
-    color: #f7768e;
-    border-color: #f7768e;
+#idle_inhibitor.activated {
+    color: #fab387; /* Peach */
+    background-color: rgba(250, 179, 135, 0.2);
 }
 
 #pulseaudio {
-    color: #7aa2f7;
+    color: #89b4fa; /* Blue */
 }
 
 #pulseaudio.muted {
-    color: #565f89;
-    background-color: rgba(86, 95, 137, 0.2);
+    color: #6c7086; /* Overlay0 */
+    background-color: rgba(108, 112, 134, 0.2);
+}
+
+#network {
+    color: #94e2d5; /* Teal */
+}
+
+#network.disconnected {
+    color: #f38ba8; /* Red */
+    background-color: rgba(243, 139, 168, 0.2);
+}
+
+#power-profiles-daemon {
+    color: #cba6f7; /* Mauve */
+}
+
+#cpu {
+    color: #f38ba8; /* Red */
+}
+
+#memory {
+    color: #fab387; /* Peach */
+}
+
+#disk {
+    color: #a6e3a1; /* Green */
+}
+
+#temperature {
+    color: #f9e2af; /* Yellow */
+}
+
+#temperature.critical {
+    background-color: rgba(243, 139, 168, 0.25);
+    color: #f38ba8;
+    border-color: #f38ba8;
 }
 
 #backlight,
 #custom-backlight_ext {
-    color: #e0af68;
+    color: #f9e2af; /* Yellow */
 }
 
 #battery {
-    color: #9ece6a;
+    color: #a6e3a1; /* Green */
 }
 
 #battery.charging,
 #battery.plugged {
-    color: #7aa2f7;
+    color: #89b4fa; /* Blue */
 }
 
 #battery.warning:not(.charging) {
-    color: #e0af68;
-    background-color: rgba(224, 175, 104, 0.2);
+    color: #fab387; /* Peach */
+    background-color: rgba(250, 179, 135, 0.2);
 }
 
 #battery.critical:not(.charging) {
-    color: #f7768e;
-    background-color: rgba(247, 118, 142, 0.25);
+    color: #f38ba8; /* Red */
+    background-color: rgba(243, 139, 168, 0.25);
     animation-name: blink;
     animation-duration: 0.8s;
     animation-timing-function: linear;
@@ -214,30 +231,16 @@ window#waybar.empty #window {
 
 @keyframes blink {
     to {
-        background-color: #f7768e;
-        color: #1a1b26;
+        background-color: #f38ba8;
+        color: #11111b;
     }
 }
 
-#network {
-    color: #9ece6a;
-}
-
-#network.disconnected {
-    color: #f7768e;
-}
-
-#power-profiles-daemon {
-    color: #bb9af7;
-}
-
-#idle_inhibitor {
-    color: #7dcfff;
-}
-
-#idle_inhibitor.activated {
-    color: #e0af68;
-    background-color: rgba(224, 175, 104, 0.2);
+#clock {
+    color: #b4befe; /* Lavender */
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 2px 14px;
 }
 
 #tray {
@@ -250,25 +253,17 @@ window#waybar.empty #window {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #f7768e;
+    background-color: #f38ba8;
 }
 
 #custom-clipboard {
-    color: #bb9af7;
+    color: #f5c2e7; /* Pink */
 }
 
 #custom-notification {
-    color: #7aa2f7;
+    color: #b4befe; /* Lavender */
 }
 
 #custom-power {
-    color: #f7768e;
-    font-size: 14px;
-    padding: 2px 10px;
-}
-
-#custom-power:hover {
-    background-color: #f7768e;
-    color: #1a1b26;
-    box-shadow: 0 0 10px rgba(247, 118, 142, 0.6);
+    color: #f38ba8; /* Red */
 }
