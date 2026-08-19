@@ -45,6 +45,7 @@ hl.workspace_rule({ workspace = "4", monitor = "HDMI-A-2", persistent = true })
 local terminal    = "kitty"
 local fileManager = "dolphin"
 local menu        = "wofi --show drun"
+local browser     = "google-chrome-stable"
 
 -------------------
 ---- AUTOSTART ----
@@ -177,6 +178,7 @@ hl.bind(mainMod .. " + Q", hl.dsp.exec_cmd(terminal))
 hl.bind(mainMod .. " + C", hl.dsp.window.close())
 hl.bind(mainMod .. " + M", hl.dsp.exit())
 hl.bind(mainMod .. " + E", hl.dsp.exec_cmd(fileManager))
+hl.bind(mainMod .. " + G", hl.dsp.exec_cmd(browser))
 hl.bind(mainMod .. " + V", hl.dsp.window.float({ action = "toggle" }))
 hl.bind(mainMod .. " + SHIFT + V", hl.dsp.exec_cmd([[cliphist list | wofi --dmenu --prompt "Clipboard History" | cliphist decode | wl-copy]]))
 hl.bind(mainMod .. " + H", hl.dsp.exec_cmd([[cliphist list | wofi --dmenu --prompt "Clipboard History" | cliphist decode | wl-copy]]))
