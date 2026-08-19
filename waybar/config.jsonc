@@ -65,8 +65,22 @@
     },
 
     "hyprland/window": {
+        "format": "{icon} {title}",
+        "icon": true,
+        "icon-size": 16,
         "max-length": 50,
-        "separate-outputs": true
+        "separate-outputs": true,
+        "rewrite": {
+            "^$": "ThinkPad T460",
+            "(.*) — Mozilla Firefox": " $1",
+            "(.*) - Google Chrome": " $1",
+            "(.*) - Chromium": " $1",
+            "(.*) - Brave": " $1",
+            "(.*) - Visual Studio Code": "󰨞 $1",
+            "(.*) - Code - OSS": "󰨞 $1",
+            "^kitty$": " kitty",
+            "^agy$": " agy"
+        }
     },
 
     "idle_inhibitor": {
