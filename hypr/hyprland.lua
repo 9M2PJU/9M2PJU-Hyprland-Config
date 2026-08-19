@@ -44,7 +44,7 @@ hl.workspace_rule({ workspace = "4", monitor = "HDMI-A-2", persistent = true })
 ---------------------
 local terminal    = "kitty"
 local fileManager = "dolphin"
-local menu        = "pkill -x nwg-drawer || nwg-drawer -c 7 -is 56 -term kitty -fm dolphin -wm hyprland -ovl"
+local menu        = "pkill -x nwg-drawer || nwg-drawer -c 7 -is 56 -term kitty -fm dolphin -ovl"
 local browser     = "google-chrome-stable"
 
 -------------------
