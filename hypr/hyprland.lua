@@ -33,10 +33,12 @@ hl.monitor({
 --------------------
 ---- WORKSPACES ----
 --------------------
-hl.workspace_rule({ workspace = "1", persistent = true })
-hl.workspace_rule({ workspace = "2", persistent = true })
-hl.workspace_rule({ workspace = "3", persistent = true })
-hl.workspace_rule({ workspace = "4", persistent = true })
+hl.workspace_rule({ workspace = "1", monitor = "HDMI-A-2", default = true, persistent = true })
+hl.workspace_rule({ workspace = "2", monitor = "HDMI-A-2", persistent = true })
+hl.workspace_rule({ workspace = "3", monitor = "HDMI-A-2", persistent = true })
+hl.workspace_rule({ workspace = "4", monitor = "HDMI-A-2", persistent = true })
+hl.workspace_rule({ workspace = "5", monitor = "eDP-1", default = true, persistent = true })
+
 
 ---------------------
 ---- MY PROGRAMS ----
