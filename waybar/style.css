@@ -1,220 +1,265 @@
+/* =============================================================================
+ * Waybar - Tokyo Night Modern Floating Island / Pill Theme
+ * Designed for Lenovo ThinkPad T460 + Dual Monitors on CachyOS
+ * ============================================================================= */
+
 * {
-    /* `otf-font-awesome` is required to be installed for icons */
-    font-family: FontAwesome, Roboto, Helvetica, Arial, sans-serif;
+    font-family: "CaskaydiaCove Nerd Font", "Cascadia Code Nerd Font", "JetBrainsMono Nerd Font", "FontAwesome", sans-serif;
     font-size: 13px;
-}
-
-window#waybar {
-    background-color: rgba(43, 48, 59, 0.5);
-    border-bottom: 3px solid rgba(100, 114, 125, 0.5);
-    color: #ffffff;
-    transition-property: background-color;
-    transition-duration: .5s;
-}
-
-window#waybar.hidden {
-    opacity: 0.2;
-}
-
-button {
-    box-shadow: inset 0 -3px transparent;
+    font-weight: 600;
     border: none;
     border-radius: 0;
+    min-height: 0;
 }
 
-button:hover {
-    background: inherit;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#pulseaudio:hover {
-    background-color: #a37800;
-}
-
-#workspaces button {
-    padding: 0 5px;
+/* Transparent Waybar window with top/side margins for floating pill effect */
+window#waybar {
     background-color: transparent;
-    color: #ffffff;
+    color: #c0caf5;
+    transition-property: background-color;
+    transition-duration: 0.3s;
 }
 
-#workspaces button:hover {
-    background: rgba(0, 0, 0, 0.2);
-}
-
-#workspaces button.focused, #workspaces button.active {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
-#workspaces button.urgent {
-    background-color: #eb4d4b;
-}
-
-#mode {
-    background-color: #64727D;
-    box-shadow: inset 0 -3px #ffffff;
-}
-
+/* Base Pill Styling for All Modules */
+#workspaces,
+#taskbar,
+#window,
 #clock,
-#battery,
 #cpu,
 #memory,
 #disk,
 #temperature,
 #backlight,
 #custom-backlight_ext,
+#battery,
 #network,
 #pulseaudio,
-#wireplumber,
-#custom-media,
-#tray,
-#mode,
 #idle_inhibitor,
-#scratchpad,
 #power-profiles-daemon,
-#custom-power,
-#mpd {
-    padding: 0 10px;
-    color: #ffffff;
+#tray,
+#custom-clipboard,
+#custom-notification,
+#custom-power {
+    background-color: rgba(26, 27, 38, 0.88);
+    color: #c0caf5;
+    padding: 2px 10px;
+    margin: 5px 3px;
+    border-radius: 12px;
+    border: 1px solid rgba(255, 255, 255, 0.08);
+    box-shadow: 0 3px 6px rgba(0, 0, 0, 0.3);
+    transition: all 0.25s ease-in-out;
 }
 
-#window,
+/* Hover effect on pills */
+#workspaces:hover,
+#taskbar:hover,
+#window:hover,
+#clock:hover,
+#cpu:hover,
+#memory:hover,
+#disk:hover,
+#temperature:hover,
+#backlight:hover,
+#custom-backlight_ext:hover,
+#battery:hover,
+#network:hover,
+#pulseaudio:hover,
+#idle_inhibitor:hover,
+#power-profiles-daemon:hover,
+#tray:hover,
+#custom-clipboard:hover,
+#custom-notification:hover,
+#custom-power:hover {
+    background-color: rgba(36, 40, 59, 0.95);
+    border-color: rgba(122, 162, 247, 0.4);
+    box-shadow: 0 4px 10px rgba(122, 162, 247, 0.2);
+}
+
+/* =============================================================================
+ * Left Modules: Workspaces & Active Window
+ * ============================================================================= */
+
 #workspaces {
-    margin: 0 4px;
+    padding: 2px 4px;
 }
 
-.modules-left > widget:first-child > #workspaces {
-    margin-left: 0;
+#workspaces button {
+    padding: 2px 8px;
+    margin: 2px 2px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #a9b1d6;
+    transition: all 0.2s ease;
 }
 
-.modules-right > widget:last-child > #workspaces {
-    margin-right: 0;
+#workspaces button:hover {
+    background-color: rgba(122, 162, 247, 0.2);
+    color: #7aa2f7;
 }
 
-#clock {
-    background-color: #64727D;
+#workspaces button.active {
+    background-color: #7aa2f7;
+    color: #1a1b26;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(122, 162, 247, 0.4);
+}
+
+#workspaces button.urgent {
+    background-color: #f7768e;
+    color: #1a1b26;
     font-weight: bold;
 }
 
+#taskbar {
+    padding: 2px 4px;
+}
+
+#taskbar button {
+    padding: 2px 8px;
+    margin: 2px 2px;
+    border-radius: 8px;
+    background-color: transparent;
+    color: #a9b1d6;
+    transition: all 0.2s ease;
+}
+
+#taskbar button:hover {
+    background-color: rgba(122, 162, 247, 0.2);
+    color: #7aa2f7;
+}
+
+#taskbar button.active {
+    background-color: rgba(122, 162, 247, 0.35);
+    border-bottom: 2px solid #7aa2f7;
+    color: #7dcfff;
+    font-weight: bold;
+    box-shadow: 0 2px 6px rgba(122, 162, 247, 0.4);
+}
+
+#taskbar button.maximized {
+    color: #9ece6a;
+}
+
+#taskbar button.minimized {
+    opacity: 0.5;
+}
+
+#window {
+    color: #7dcfff;
+    font-weight: 500;
+}
+
+window#waybar.empty #window {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+}
+
+/* =============================================================================
+ * Center Module: Clock & Date
+ * ============================================================================= */
+
+#clock {
+    color: #7aa2f7;
+    font-weight: bold;
+    letter-spacing: 0.5px;
+    padding: 2px 14px;
+}
+
+/* =============================================================================
+ * Right Modules: Hardware, System, Audio, Battery & Controls
+ * ============================================================================= */
+
+#cpu {
+    color: #bb9af7;
+}
+
+#memory {
+    color: #7dcfff;
+}
+
+#disk {
+    color: #9ece6a;
+}
+
+#temperature {
+    color: #e0af68;
+}
+
+#temperature.critical {
+    background-color: rgba(247, 118, 142, 0.25);
+    color: #f7768e;
+    border-color: #f7768e;
+}
+
+#pulseaudio {
+    color: #7aa2f7;
+}
+
+#pulseaudio.muted {
+    color: #565f89;
+    background-color: rgba(86, 95, 137, 0.2);
+}
+
+#backlight,
+#custom-backlight_ext {
+    color: #e0af68;
+}
+
 #battery {
-    background-color: #ffffff;
-    color: #000000;
+    color: #9ece6a;
 }
 
-#battery.charging, #battery.plugged {
-    color: #ffffff;
-    background-color: #26A65B;
+#battery.charging,
+#battery.plugged {
+    color: #7aa2f7;
 }
 
-@keyframes blink {
-    to {
-        background-color: #ffffff;
-        color: #000000;
-    }
+#battery.warning:not(.charging) {
+    color: #e0af68;
+    background-color: rgba(224, 175, 104, 0.2);
 }
 
 #battery.critical:not(.charging) {
-    background-color: #f53c3c;
-    color: #ffffff;
+    color: #f7768e;
+    background-color: rgba(247, 118, 142, 0.25);
     animation-name: blink;
-    animation-duration: 0.5s;
-    animation-timing-function: steps(12);
+    animation-duration: 0.8s;
+    animation-timing-function: linear;
     animation-iteration-count: infinite;
     animation-direction: alternate;
 }
 
-#power-profiles-daemon {
-    padding-right: 15px;
-}
-
-#power-profiles-daemon.performance {
-    background-color: #f53c3c;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.balanced {
-    background-color: #2980b9;
-    color: #ffffff;
-}
-
-#power-profiles-daemon.power-saver {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-label:focus {
-    background-color: #000000;
-}
-
-#cpu {
-    background-color: #2ecc71;
-    color: #000000;
-}
-
-#memory {
-    background-color: #9b59b6;
-}
-
-#memory.warning {
-    background-color: #e67e22;
-    color: #ffffff;
-}
-
-#memory.critical {
-    background-color: #e74c3c;
-    color: #ffffff;
-}
-
-#disk {
-    background-color: #8e44ad;
-}
-
-#disk.warning {
-    background-color: #e67e22;
-    color: #ffffff;
-}
-
-#disk.critical {
-    background-color: #e74c3c;
-    color: #ffffff;
-}
-
-#backlight {
-    background-color: #90b1b1;
-}
-
-#custom-backlight_ext {
-    background-color: #7da1a1;
+@keyframes blink {
+    to {
+        background-color: #f7768e;
+        color: #1a1b26;
+    }
 }
 
 #network {
-    background-color: #2980b9;
+    color: #9ece6a;
 }
 
 #network.disconnected {
-    background-color: #f53c3c;
+    color: #f7768e;
 }
 
-#pulseaudio {
-    background-color: #f1c40f;
-    color: #000000;
+#power-profiles-daemon {
+    color: #bb9af7;
 }
 
-#pulseaudio.muted {
-    background-color: #90b1b1;
-    color: #2a5c45;
+#idle_inhibitor {
+    color: #7dcfff;
 }
 
-#temperature {
-    background-color: #f0932b;
-}
-
-#temperature.critical {
-    background-color: #eb4d4b;
+#idle_inhibitor.activated {
+    color: #e0af68;
+    background-color: rgba(224, 175, 104, 0.2);
 }
 
 #tray {
-    background-color: #2980b9;
+    padding: 2px 8px;
 }
 
 #tray > .passive {
@@ -223,51 +268,25 @@ label:focus {
 
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
-    background-color: #eb4d4b;
-}
-
-#idle_inhibitor {
-    background-color: #2d3436;
-}
-
-#idle_inhibitor.activated {
-    background-color: #ecf0f1;
-    color: #2d3436;
+    background-color: #f7768e;
 }
 
 #custom-clipboard {
-    background-color: #34495e;
-    color: #ffffff;
-    padding: 0 10px;
-    margin-right: 4px;
-    font-size: 14px;
-}
-
-#custom-clipboard:hover {
-    background-color: #4b6584;
+    color: #bb9af7;
 }
 
 #custom-notification {
-    background-color: #2c3e50;
-    color: #ffffff;
-    padding: 0 10px;
-    margin-right: 4px;
-    font-size: 14px;
-}
-
-#custom-notification:hover {
-    background-color: #34495e;
+    color: #7aa2f7;
 }
 
 #custom-power {
-    background-color: #e74c3c;
-    color: #ffffff;
-    padding: 0 12px;
-    margin-right: 0;
+    color: #f7768e;
+    font-size: 14px;
+    padding: 2px 10px;
 }
 
 #custom-power:hover {
-    background-color: #c0392b;
+    background-color: #f7768e;
+    color: #1a1b26;
+    box-shadow: 0 0 10px rgba(247, 118, 142, 0.6);
 }
-
-
