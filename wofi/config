@@ -1,0 +1,16 @@
+# Wofi Configuration - Tokyo Night Theme
+mode=drun
+width=560
+height=420
+location=center
+prompt=Search Applications...
+filter_rate=100
+allow_images=true
+image_size=28
+key_exit=Escape
+insensitive=true
+term=kitty
+layer=overlay
+hide_scroll=true
+no_actions=true
+matching=fuzzy
