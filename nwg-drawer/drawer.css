@@ -1,5 +1,5 @@
 /* =============================================================================
- * nwg-drawer - Tokyo Night Theme
+ * nwg-drawer - Tokyo Night Dark Theme
  * Designed for ThinkPad T460 (Hyprland)
  * Palette: Tokyo Night (#1a1b26, #24283b, #7aa2f7, #bb9af7, #c0caf5)
  * ============================================================================= */
@@ -15,43 +15,60 @@ window {
     color: #c0caf5;
 }
 
+/* Global button reset - eliminate all default GTK light button backgrounds */
+button {
+    background: transparent;
+    background-color: transparent;
+    background-image: none;
+    border: none;
+    box-shadow: none;
+    text-shadow: none;
+    color: #c0caf5;
+    border-radius: 8px;
+    transition: all 0.15s ease-in-out;
+}
+
+button:hover {
+    background-color: rgba(41, 46, 66, 0.8);
+    color: #ffffff;
+}
+
 /* Search Entry */
 entry {
     background-color: rgba(36, 40, 59, 0.9);
-    border: 1px solid rgba(122, 162, 247, 0.5);
+    border: 1px solid rgba(122, 162, 247, 0.4);
     border-radius: 12px;
     color: #c0caf5;
     font-size: 14px;
     font-weight: 600;
     padding: 8px 16px;
-    margin: 16px 24px;
+    margin: 16px 24px 12px 24px;
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.3);
 }
 
 entry:focus {
     border: 1px solid #7aa2f7;
-    box-shadow: 0 0 10px rgba(122, 162, 247, 0.5);
+    box-shadow: 0 0 10px rgba(122, 162, 247, 0.4);
 }
 
 /* Category Filter Bar / Tabs */
 #categories {
-    margin: 0 24px 12px 24px;
+    margin: 0 24px 14px 24px;
 }
 
 #category-button {
-    background-color: rgba(36, 40, 59, 0.6);
+    background-color: rgba(36, 40, 59, 0.75);
     border: 1px solid rgba(255, 255, 255, 0.08);
     border-radius: 10px;
     color: #a9b1d6;
     padding: 6px 14px;
     margin: 3px;
-    transition: all 0.2s ease-in-out;
 }
 
 #category-button:hover {
-    background-color: rgba(122, 162, 247, 0.2);
-    color: #c0caf5;
-    border-color: rgba(122, 162, 247, 0.4);
+    background-color: rgba(122, 162, 247, 0.25);
+    border: 1px solid rgba(122, 162, 247, 0.5);
+    color: #ffffff;
 }
 
 #category-button:checked {
@@ -64,34 +81,53 @@ entry:focus {
 /* Application Grid Buttons */
 #app-button {
     background: transparent;
+    background-color: transparent;
     border: 1px solid transparent;
     border-radius: 12px;
     padding: 12px 8px;
     margin: 6px;
     color: #c0caf5;
-    transition: all 0.15s ease-in-out;
 }
 
 #app-button:hover {
-    background: rgba(41, 46, 66, 0.85);
+    background-color: rgba(41, 46, 66, 0.85);
     border: 1px solid rgba(122, 162, 247, 0.5);
     box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
 }
 
 #app-button:focus {
-    background: rgba(122, 162, 247, 0.25);
+    background-color: rgba(122, 162, 247, 0.25);
     border: 1px solid #7aa2f7;
+}
+
+/* Pinned Apps Header */
+#pinned-box {
+    padding: 8px 24px;
+}
+
+#pinned-button {
+    background: transparent;
+    background-color: transparent;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 8px;
+    margin: 4px;
+}
+
+#pinned-button:hover {
+    background-color: rgba(41, 46, 66, 0.85);
+    border: 1px solid rgba(122, 162, 247, 0.5);
 }
 
 /* Power Bar */
 #power-button {
+    background: transparent;
     background-color: transparent;
     border: none;
     border-radius: 10px;
     padding: 8px;
     margin: 6px;
     color: #7aa2f7;
-    transition: all 0.2s ease-in-out;
 }
 
 #power-button:hover {
