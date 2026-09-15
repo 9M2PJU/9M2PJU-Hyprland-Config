@@ -34,9 +34,10 @@ Optimized, lightweight, and modern **Hyprland** (Wayland) dotfiles tuned for **L
 - **Power Menu**: Dedicated `⏻` button triggering `wlogout`.
 
 ### 3. Idle & Lock Management (`hypridle` + `hyprlock`)
-- **2.5 min**: Dims backlight.
-- **5 min**: Automatic lock screen via `hyprlock`.
-- **6 min**: Turns off displays via DPMS (wakes on mouse/key).
+- **5 min**: Dims laptop backlight to 50%.
+- **10 min**: Dims laptop backlight to 10%.
+- **15 min**: Automatic lock screen via `hyprlock`.
+- **16 min**: Turns off displays via DPMS (wakes on mouse/key).
 - **30 min**: System suspend.
 - **Lock on sleep**: Automatically locks session before suspend or lid close.
 - **Caffeine Mode**: Toggleable on Waybar via `idle_inhibitor`.
@@ -46,7 +47,7 @@ Optimized, lightweight, and modern **Hyprland** (Wayland) dotfiles tuned for **L
 - **Auto-Dismiss Timeout**: Normal notifications auto-dismiss in **3 seconds** (and remain saved in history).
 - **Waybar Bell (`󰂚`)**: Shows unread notification badge; left-click opens Control Center, right-click toggles DND.
 
-### 5. Clipboard History (`cliphist`)
+### 5. Clipboard History (`cliphist` + `bemenu`)
 - Automatically caches copied text, code snippets, and image data.
 - **Waybar Button (`󰅍`)**: Click to open searchable clipboard menu; right-click clears history.
 - **Shortcuts**: `SUPER + SHIFT + V` or `SUPER + H`.
@@ -72,11 +73,12 @@ Optimized, lightweight, and modern **Hyprland** (Wayland) dotfiles tuned for **L
 | Keybinding | Action |
 | :--- | :--- |
 | `SUPER` + `Q` | Open Terminal (`kitty`) |
+| `SUPER` + `G` | Open Web Browser (`google-chrome-stable`) |
 | `SUPER` + `E` | Open File Manager (`dolphin`) |
-| `SUPER` + `R` or `SUPER` + `SPACE` | App Launcher (`wofi`) |
+| `SUPER` + `R` or `SUPER` + `SPACE` | **App Launcher** (`rofi` with Tokyo Night dark theme) |
 | `SUPER` + `C` | Close Active Window |
 | `SUPER` + `V` | **Toggle Floating Window** (Full Tiled vs Small Floating) |
-| `SUPER` + `SHIFT` + `V` *(or `SUPER` + `H`)* | **Clipboard History** (`cliphist` popup) |
+| `SUPER` + `SHIFT` + `V` *(or `SUPER` + `H`)* | **Clipboard History** (`cliphist` picker) |
 | `SUPER` + `N` | **Notification Center** (`swaync` slide-out panel) |
 | `ALT` + `TAB` *(or `SUPER` + `TAB`)* | **Instant Window Switch** (Next Window) |
 | `ALT` + `SHIFT` + `TAB` | **Instant Window Switch** (Previous Window) |
