@@ -26,7 +26,7 @@ update_and_run_waybar() {
     sed -i -E "s/\"output\": \[[^]]*\]/\"output\": [\"$target\"]/g" "$CONFIG_FILE"
     killall -9 waybar 2>/dev/null || true
     sleep 0.3
-    hyprctl dispatch "hl.dsp.exec_cmd('waybar')" >/dev/null 2>&1 || (nohup waybar >/dev/null 2>&1 & disown)
+    setsid -f waybar > "$HOME/.config/waybar/waybar.log" 2>&1
     
     # Direct SwayNC notification popups and control center to primary active monitor
     swaync-client --change-noti-monitor "$target" >/dev/null 2>&1 || true

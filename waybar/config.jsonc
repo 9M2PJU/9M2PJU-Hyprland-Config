@@ -49,6 +49,8 @@
             "class<chromium>": "",
             "class<Brave-browser>": "",
             "class<firefox>": "",
+            "class<thunar>": "",
+            "class<Thunar>": "",
             "class<org.kde.dolphin>": "",
             "class<dolphin>": "",
             "class<code-oss>": "󰨞",
@@ -146,8 +148,8 @@
             "critical": 90
         },
         "tooltip": true,
-        "tooltip-format": "Root (/): {used} used / {total} total ({percentage_used}%)\nFree: {free} ({percentage_free}%)\nClick: Open Dolphin",
-        "on-click": "dolphin /"
+        "tooltip-format": "Root (/): {used} used / {total} total ({percentage_used}%)\nFree: {free} ({percentage_free}%)\nClick: Open File Manager",
+        "on-click": "thunar /"
     },
 
     "temperature": {
@@ -204,10 +206,11 @@
     "network": {
         "format-wifi": "{essid} ({signalStrength}%) ",
         "format-ethernet": "{ipaddr}/{cidr} ",
-        "tooltip-format": "{ifname} via {gwaddr} \n\nRight-click: Open Wi-Fi Network Menu",
+        "tooltip-format": "{ifname} via {gwaddr} \n\nClick: Open Wi-Fi Network Menu",
         "format-linked": "{ifname} (No IP) ",
         "format-disconnected": "Disconnected ⚠",
         "format-alt": "{ifname}: {ipaddr}/{cidr}",
+        "on-click": "bash ~/.config/hypr/scripts/wifi-menu.sh",
         "on-click-right": "bash ~/.config/hypr/scripts/wifi-menu.sh"
     },
 

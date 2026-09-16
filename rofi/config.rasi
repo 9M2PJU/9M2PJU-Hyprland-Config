@@ -1,12 +1,17 @@
 configuration {
-    modi: "drun,run,filebrowser";
+    modi: "drun,run,filebrowser,window";
     show-icons: true;
     icon-theme: "Papirus-Dark";
     display-drun: "  Apps";
     display-run: "  Run";
     display-filebrowser: "  Files";
+    display-window: "  Windows";
     drun-display-format: "{name} [<span weight='light' size='small'><i>({generic})</i></span>]";
     drun-match-fields: "name,generic,exec,categories";
+    disable-history: false;
+    sort: true;
+    sorting-method: "normal";
+    max-history-size: 50;
     font: "CaskaydiaCove Nerd Font 12";
     terminal: "kitty";
 }

@@ -62,7 +62,7 @@ Optimized, lightweight, and modern **Hyprland** (Wayland) dotfiles tuned for **L
 
 ### 7. Input, Navigation & Window Cycling
 - **Instant Window Switching**: Zero-delay focus cycling with `ALT + TAB` / `SUPER + TAB` across all monitors and workspaces.
-- **Mouse Wheel**: `scroll_factor = 2.0` (matching KDE Plasma scroll speed).
+- **Mouse Wheel**: `scroll_factor = 2.3` (faster scroll speed).
 - **Touchpad**: `scroll_factor = 1.0` (standard natural scrolling with tap-to-click).
 - **NumLock on Login**: Automatically enabled on both SDDM login screen and Hyprland session.
 

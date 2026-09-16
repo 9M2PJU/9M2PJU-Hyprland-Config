@@ -43,9 +43,8 @@ hl.workspace_rule({ workspace = "4", monitor = "HDMI-A-2", persistent = true })
 ---- MY PROGRAMS ----
 ---------------------
 local terminal    = "kitty"
-local fileManager = "thunar"
--- local menu        = "pkill -x nwg-drawer || nwg-drawer -c 7 -is 56 -term kitty -fm thunar -ovl"
-local menu        = "pkill -x rofi || rofi -show drun"
+local fileManager = "dolphin"
+local menu        = "pkill -x nwg-drawer || nwg-drawer -c 7 -is 56 -term kitty -fm dolphin -ovl"
 local browser     = "google-chrome-stable"
 
 -------------------
@@ -56,8 +55,8 @@ hl.on("hyprland.start", function ()
     hl.exec_cmd("~/.config/hypr/scripts/launch-swaync.sh")
     hl.exec_cmd("wl-paste --type text --watch cliphist store")
     hl.exec_cmd("wl-paste --type image --watch cliphist store")
-    hl.exec_cmd("sleep 1 && nm-applet")
-    hl.exec_cmd("systemctl --user start hyprpolkitagent.service || /usr/lib/hyprpolkitagent/hyprpolkitagent")
+    hl.exec_cmd("nm-applet --indicator")
+    hl.exec_cmd("/usr/lib/polkit-kde-authentication-agent-1")
     hl.exec_cmd("hypridle")
     hl.exec_cmd("swaybg -c '#1a1b26'")
     hl.exec_cmd("easyeffects --gapplication-service")
@@ -159,7 +158,7 @@ hl.config({
         kb_layout          = "us",
         follow_mouse       = 1,
         sensitivity        = 0,
-        scroll_factor      = 2.3,
+        scroll_factor      = 2.0,
         numlock_by_default = true,
 
         touchpad = {

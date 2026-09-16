@@ -1,0 +1,39 @@
+[2026-09-16 14:36:24.056] [info] no JOURNAL_STREAM, logging to console
+
+(waybar:15697): Gtk-WARNING **: 14:36:24.140: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name
+[2026-09-16 14:36:24.247] [info] Using configuration file /home/x/.config/waybar/config.jsonc
+[2026-09-16 14:36:24.250] [info] Using CSS file /home/x/.config/waybar/style.css
+[2026-09-16 14:36:24.266] [info] Discovered appearance 'dark'
+
+(waybar:15697): Gtk-WARNING **: 14:36:24.271: Theme parsing error: gtk.css:1048:16: 'border-spacing' is not a valid property name
+[2026-09-16 14:36:24.320] [info] Using CSS file /home/x/.config/waybar/style.css
+[2026-09-16 14:36:24.324] [info] Hyprland IPC starting
+[2026-09-16 14:36:24.325] [info] Loading persistent workspaces from Waybar config
+[2026-09-16 14:36:24.334] [warning] Disk: path is deprecated use paths instead!
+[2026-09-16 14:36:24.348] [info] Tray: No ignore-list configured
+[2026-09-16 14:36:24.535] [info] Host: Found 0 pre-registered SNI items
+[2026-09-16 14:36:24.549] [warning] Requested height: 34 is less than the minimum height: 41 required by the modules
+[2026-09-16 14:36:24.549] [info] Bar configured (width: 1920, height: 41) for output: HDMI-A-2
+[2026-09-16 14:36:38.093] [info] Host::itemRegistered called with service: :1.134/org/ayatana/NotificationItem/nm_applet
+[2026-09-16 14:36:38.139] [info] Tray::onAdd - item bus_name=':1.134', category='SystemServices', icon_name='nm-signal-75', title='Network'
+[2026-09-16 14:36:46.516] [info] Host::itemRegistered called with service: :1.137/org/ayatana/NotificationItem/nm_applet
+[2026-09-16 14:36:46.518] [info] Tray::onAdd - item bus_name=':1.137', category='SystemServices', icon_name='nm-signal-75', title='Network'
+[2026-09-16 14:37:17.244] [info] Hyprland config reloaded, reinitializing hyprland/workspaces module...
+[2026-09-16 14:37:17.259] [info] Loading persistent workspaces from Waybar config
+[2026-09-16 14:42:37.889] [info] Hyprland IPC: detected Lua-based dispatch protocol
+[2026-09-16 14:42:39.799] [info] Host::itemRegistered called with service: :1.164/StatusNotifierItem
+[2026-09-16 14:42:39.872] [info] Tray::onAdd - item bus_name=':1.164', category='ApplicationStatus', icon_name='org.telegram.desktop-symbolic', title='TelegramDesktop'
+
+(waybar:15697): LIBDBUSMENU-GLIB-CRITICAL **: 14:42:48.098: dbusmenu_menuitem_send_about_to_show: assertion 'DBUSMENU_IS_MENUITEM(mi)' failed
+*** BUG ***
+In pixman_region32_init_rect: Invalid rectangle passed
+Set a breakpoint on '_pixman_log_error' to debug
+
+*** BUG ***
+In pixman_region32_init_rect: Invalid rectangle passed
+Set a breakpoint on '_pixman_log_error' to debug
+
+*** BUG ***
+In pixman_region32_init_rect: Invalid rectangle passed
+Set a breakpoint on '_pixman_log_error' to debug
+

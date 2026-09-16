@@ -24,9 +24,8 @@ workspace = 4, monitor:HDMI-A-2, persistent:true
 ### MY PROGRAMS ###
 ###################
 $terminal = kitty
-$fileManager = thunar
-# $menu = pkill -x nwg-drawer || nwg-drawer -c 7 -is 56 -term kitty -fm thunar -ovl
-$menu = pkill -x rofi || rofi -show drun
+$fileManager = dolphin
+$menu = pkill -x nwg-drawer || nwg-drawer -c 7 -is 56 -term kitty -fm dolphin -ovl
 
 #################
 ### AUTOSTART ###
@@ -37,8 +36,8 @@ exec-once = ~/.config/waybar/launch-waybar.sh &
 exec-once = ~/.config/hypr/scripts/launch-swaync.sh &
 exec-once = wl-paste --type text --watch cliphist store &
 exec-once = wl-paste --type image --watch cliphist store &
-exec-once = sleep 1 && nm-applet &
-exec-once = systemctl --user start hyprpolkitagent.service || /usr/lib/hyprpolkitagent/hyprpolkitagent &
+exec-once = nm-applet --indicator &
+exec-once = /usr/lib/polkit-kde-authentication-agent-1 &
 exec-once = hypridle &
 exec-once = swaybg -c '#1a1b26' &
 exec-once = easyeffects --gapplication-service &
@@ -127,7 +126,7 @@ input {
     kb_layout = us
     follow_mouse = 1
     sensitivity = 0
-    scroll_factor = 2.3
+    scroll_factor = 2.0
     numlock_by_default = true
 
     touchpad {
