@@ -17,6 +17,7 @@
         "idle_inhibitor",
         "pulseaudio",
         "network",
+        "custom/printer",
         "power-profiles-daemon",
         "cpu",
         "memory",
@@ -231,6 +232,19 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+
+    // CUPS / Canon PIXMA Printer Jobs Monitor
+    "custom/printer": {
+        "format": "{}",
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/printer.sh",
+        "interval": 3,
+        "on-click": "canon-pixma-gseries-tool",
+        "on-click-middle": "cupsenable Canon_G3010 && notify-send -t 2000 'Printer' 'Resumed print queue'",
+        "on-click-right": "xdg-open http://localhost:631/jobs/",
+        "signal": 9,
+        "tooltip": true
     },
 
     // Clipboard History (cliphist)

@@ -35,6 +35,7 @@ window#waybar {
 #battery,
 #network,
 #pulseaudio,
+#custom-printer,
 #idle_inhibitor,
 #power-profiles-daemon,
 #tray,
@@ -65,6 +66,7 @@ window#waybar {
 #battery:hover,
 #network:hover,
 #pulseaudio:hover,
+#custom-printer:hover,
 #idle_inhibitor:hover,
 #power-profiles-daemon:hover,
 #tray:hover,
@@ -264,6 +266,30 @@ window#waybar.empty #window {
 #tray > .needs-attention {
     -gtk-icon-effect: highlight;
     background-color: #f7768e;
+}
+
+#custom-printer {
+    color: #7dcfff; /* Cyan */
+}
+
+#custom-printer.printing {
+    color: #9ece6a; /* Green */
+    background-color: rgba(158, 206, 106, 0.2);
+    border-color: rgba(158, 206, 106, 0.4);
+}
+
+#custom-printer.paused {
+    color: #e0af68; /* Orange / Warning */
+    background-color: rgba(224, 175, 104, 0.2);
+    border-color: rgba(224, 175, 104, 0.4);
+}
+
+#custom-printer.idle {
+    background-color: transparent;
+    border: none;
+    box-shadow: none;
+    padding: 0;
+    margin: 0;
 }
 
 #custom-clipboard {
