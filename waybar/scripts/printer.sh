@@ -53,7 +53,7 @@ else
     TOOLTIP="${TOOLTIP}\nNo active print jobs in queue.\n"
 fi
 
-TOOLTIP="${TOOLTIP}\n<i>Left-click: Open Canon G-Series Tool\nMiddle-click: Resume / Unpause Queue\nRight-click: CUPS Jobs Web UI</i>"
+TOOLTIP="${TOOLTIP}\n<i>Left-click: Open CUPS Spooler (Print Queue)\nMiddle-click: Resume / Unpause Queue\nRight-click: Open Canon G-Series Tool</i>"
 
 # Determine Class, Text, and Alt
 if [[ $PRINTER_DISABLED -eq 1 ]]; then

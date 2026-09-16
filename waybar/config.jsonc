@@ -238,9 +238,9 @@
         "return-type": "json",
         "exec": "$HOME/.config/waybar/scripts/printer.sh",
         "interval": 3,
-        "on-click": "canon-pixma-gseries-tool",
+        "on-click": "$HOME/.config/waybar/scripts/open-cups-spooler.sh",
         "on-click-middle": "cupsenable Canon_G3010 && notify-send -t 2000 'Printer' 'Resumed print queue'",
-        "on-click-right": "xdg-open http://localhost:631/jobs/",
+        "on-click-right": "canon-pixma-gseries-tool",
         "signal": 9,
         "tooltip": true
     },
