@@ -1,4 +1,9 @@
 #!/usr/bin/env bash
+# =============================================================================
+# Dynamic Waybar Launcher for Hyprland (Auto Display Switcher)
+# - Displays Waybar ONLY on External Monitor when connected (e.g. HDMI-A-2)
+# - Displays Waybar ONLY on Internal Laptop Screen when standalone (eDP-1)
+# =============================================================================
 set -e
 
 CONFIG_FILE="$HOME/.config/waybar/config.jsonc"
@@ -23,6 +28,7 @@ get_target_monitor() {
 
 update_and_run_waybar() {
     target=$(get_target_monitor)
+    sed -i -E "s/\"output\": \[[^]]*\]/\"output\": [\"$target\"]/g" "$CONFIG_FILE"
     killall -9 waybar 2>/dev/null || true
     sleep 0.3
     setsid -f waybar > "$HOME/.config/waybar/waybar.log" 2>&1
@@ -48,4 +54,3 @@ if [ -S "$SOCKET" ]; then
         esac
     done
 fi
-
