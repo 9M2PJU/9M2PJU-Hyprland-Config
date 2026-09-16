@@ -23,7 +23,6 @@ get_target_monitor() {
 
 update_and_run_waybar() {
     target=$(get_target_monitor)
-    sed -i -E "s/\"output\": \[[^]]*\]/\"output\": [\"$target\"]/g" "$CONFIG_FILE"
     killall -9 waybar 2>/dev/null || true
     sleep 0.3
     setsid -f waybar > "$HOME/.config/waybar/waybar.log" 2>&1

@@ -1,6 +1,4 @@
-// -*- mode: jsonc -*-
 {
-    "output": ["HDMI-A-2"],
     "layer": "top",
     "position": "top",
     "height": 34,
