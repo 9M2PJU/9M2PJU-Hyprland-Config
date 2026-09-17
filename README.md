@@ -43,6 +43,7 @@ Optimized, lightweight, and modern **Hyprland** (Wayland) dotfiles tuned for **L
 - **Caffeine Mode**: Toggleable on Waybar via `idle_inhibitor`.
 
 ### 4. Notification Center & Control Panel (`swaync`)
+- **Dynamic Active-Monitor Routing**: Automatically follows the currently focused monitor (`focusedmon` IPC events via socket2) so popups and Control Center appear wherever your active desktop is.
 - **Modern Slide-Out Panel**: Full notification history, media playback controls, and Do Not Disturb (DND).
 - **Auto-Dismiss Timeout**: Normal notifications auto-dismiss in **5 seconds** (low in **3s**, critical in **7s**) while remaining stored in history.
 - **Waybar Bell (`󰂚`)**: Shows unread notification badge; left-click opens Control Center, right-click toggles DND.
@@ -110,6 +111,8 @@ Optimized, lightweight, and modern **Hyprland** (Wayland) dotfiles tuned for **L
 │   ├── hypridle.conf         # Idle, DPMS, and sleep timeout daemon
 │   ├── hyprlock.conf         # Blurred desktop lockscreen
 │   └── scripts/
+│       ├── launch-swaync.sh  # SwayNC daemon startup script
+│       ├── swaync-follow-focus.sh # Dynamic active-monitor IPC follower
 │       ├── screenshot.sh     # Area, Fullscreen, and Window screenshot helper
 │       ├── window-switch-next.sh # Instant Next-Window focus switcher
 │       └── window-switch-prev.sh # Instant Prev-Window focus switcher
