@@ -11,7 +11,7 @@ echo "=== 9M2PJU Hyprland Configuration Setup ==="
 
 # 1. Backup existing configs if they exist
 mkdir -p "$BACKUP_DIR"
-for cfg in hypr waybar wlogout; do
+for cfg in hypr waybar wlogout swaync; do
     if [[ -d "$HOME/.config/$cfg" ]]; then
         echo "[+] Backing up ~/.config/$cfg to $BACKUP_DIR/"
         cp -r "$HOME/.config/$cfg" "$BACKUP_DIR/"
@@ -19,14 +19,18 @@ for cfg in hypr waybar wlogout; do
 done
 
 # 2. Deploy configs
-mkdir -p "$HOME/.config/hypr" "$HOME/.config/waybar/scripts" "$HOME/.config/wlogout"
+mkdir -p "$HOME/.config/hypr" "$HOME/.config/waybar/scripts" "$HOME/.config/wlogout" "$HOME/.config/swaync"
 
-echo "[+] Installing Hyprland configuration (hyprland.lua, hyprland.conf, hypridle, hyprlock)..."
+echo "[+] Installing Hyprland configuration (hyprland.lua, hyprland.conf, hypridle, hyprlock, scripts)..."
 cp -r "$DOTFILES_DIR/hypr/"* "$HOME/.config/hypr/"
+chmod +x "$HOME/.config/hypr/scripts/"*.sh
 
 echo "[+] Installing Waybar configuration & scripts..."
 cp -r "$DOTFILES_DIR/waybar/"* "$HOME/.config/waybar/"
 chmod +x "$HOME/.config/waybar/scripts/"*.sh
+
+echo "[+] Installing SwayNC configuration & styles..."
+cp -r "$DOTFILES_DIR/swaync/"* "$HOME/.config/swaync/"
 
 echo "[+] Installing wlogout layout..."
 cp -r "$DOTFILES_DIR/wlogout/"* "$HOME/.config/wlogout/"
