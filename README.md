@@ -44,7 +44,7 @@ Optimized, lightweight, and modern **Hyprland** (Wayland) dotfiles tuned for **L
 
 ### 4. Notification Center & Control Panel (`swaync`)
 - **Modern Slide-Out Panel**: Full notification history, media playback controls, and Do Not Disturb (DND).
-- **Auto-Dismiss Timeout**: Normal notifications auto-dismiss in **3 seconds** (and remain saved in history).
+- **Auto-Dismiss Timeout**: Normal notifications auto-dismiss in **5 seconds** (low in **3s**, critical in **7s**) while remaining stored in history.
 - **Waybar Bell (`󰂚`)**: Shows unread notification badge; left-click opens Control Center, right-click toggles DND.
 
 ### 5. Clipboard History (`cliphist` + `bemenu`)
@@ -120,7 +120,7 @@ Optimized, lightweight, and modern **Hyprland** (Wayland) dotfiles tuned for **L
 │       ├── brightness-ext.sh # DDC/CI external monitor brightness controller
 │       └── tailscale.sh      # Tailscale VPN status module
 ├── swaync/
-│   ├── config.json           # SwayNC notification center settings & 3s timeout
+│   ├── config.json           # SwayNC notification center settings & 5s timeout
 │   └── style.css             # SwayNC notification & control center styling
 ├── wlogout/
 │   └── layout                # Power menu actions (Lock, Suspend, Reboot, Shutdown)
